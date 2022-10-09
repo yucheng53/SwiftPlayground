@@ -65,9 +65,9 @@ func check5(arr: Array<Int>) -> Bool {
   if arr.count < 1 {
     return false
   }
-    if arr[0] == 5 || arr[arr.count-1] == 5  {
-        return true
-    }
+  if arr[0] == 5 || arr[arr.count-1] == 5  {
+    return true
+  }
     return false
 }
 print(check5(arr: [1]))
@@ -99,25 +99,69 @@ print(rotateArr(arr: [1,2,3]))
 //Exercise 25
 //Write a Swift program to compute the sum of all the elements
 //of a given array of integers and length 4.
-//
+func sumOfAll(arr: Array<Int>) -> Int {
+    var result: Int = 0
+    for i in arr {
+        result += i
+    }
+    return result
+}
+print(sumOfAll(arr: [1,2,3,4]))
+
 //Exercise 26
-//
 //Write a Swift program to compute and return the absolute
 //difference of n and 51, if n is over 51 return double the
 //absolute difference
+func absoluteDiff(n: Int) -> Int {
+    if n > 51 {
+        return 2 * (n - 51)
+    } else {
+        return (51 - n)
+    }
+}
+
 //Exercise 27
 //Write a Swift program that accept two integer values and
 //return true if one of them is 20 or if their sum is 20
+func sum20(num1: Int, num2: Int) -> Bool {
+    if num1 == 20 || num2 == 20 || num1 + num2 == 20 {
+        return true
+    } else {
+        return false
+    }
+}
+
 //Exercise 28
 //Write a Swift program to accept two integer values and return
 //true if one is negative and one is positive. Return true only if
 //both are negative.
+func checkNegative(num1: Int, num2: Int) -> Bool {
+    if num1 < 0 && num2 < 0 {
+        return true
+    } else {
+        return false
+    }
+}
+
 //Exercise 29
 //Write a Swift program that return true if either of two given
 //integers is in the range 10..30 inclusive.
+func checkRange(num1: Int, num2: Int) -> Bool {
+    let range = 10...30
+    if range.contains(num1) || range.contains(num2) {
+        return true
+    } else {
+        return false
+    }
+}
 //Exercise 30
 //Write a Swift program to change the first and last character
 //of a given string.
-//
+func changeString(str: String) -> String {
+    var newString: String = str
+    newString = "H" + newString.dropFirst().dropLast() + "X"
+    return newString
+}
+
 
 
